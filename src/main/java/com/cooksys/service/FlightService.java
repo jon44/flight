@@ -15,7 +15,7 @@ public class FlightService {
 	@Autowired
 	FlightGenerator generator;
 
-	private ArrayList<Flight> flightList = new ArrayList<>();
+	private ArrayList<Flight> flightList = new ArrayList<Flight>();
 	
 	public ArrayList<Flight> getDailyFlightList()
 	{

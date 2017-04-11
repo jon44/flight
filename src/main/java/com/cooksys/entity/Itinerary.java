@@ -1,11 +1,11 @@
 package com.cooksys.entity;
 
-import java.util.List;
+import java.util.Set;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
-import javax.persistence.OneToMany;
+import javax.persistence.ManyToMany;
 
 @Entity
 public class Itinerary {
@@ -14,17 +14,20 @@ public class Itinerary {
 	@GeneratedValue
 	private Long id;
 	
-	@OneToMany
-	private List<FlightEntity> flights;
+	@ManyToMany
+	private Set<FlightEntity> flights;
 	
 	private Long flightTime;
 	
 	private Long layover;
+	
+	@ManyToMany(mappedBy = "itineraries")
+	private Set<User> users;
 
 	public Itinerary() {
 		
 	}
-
+	
 	public Long getId() {
 		return id;
 	}
@@ -33,11 +36,11 @@ public class Itinerary {
 		this.id = id;
 	}
 
-	public List<FlightEntity> getFlights() {
+	public Set<FlightEntity> getFlights() {
 		return flights;
 	}
 
-	public void setFlights(List<FlightEntity> flights) {
+	public void setFlights(Set<FlightEntity> flights) {
 		this.flights = flights;
 	}
 
@@ -55,6 +58,14 @@ public class Itinerary {
 
 	public void setLayover(Long layover) {
 		this.layover = layover;
+	}
+
+	public Set<User> getUsers() {
+		return users;
+	}
+
+	public void setUsers(Set<User> users) {
+		this.users = users;
 	}
 
 	@Override

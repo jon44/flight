@@ -1,10 +1,15 @@
 package com.cooksys.entity;
 
+import java.util.Set;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.ManyToMany;
+import javax.persistence.Table;
 
 @Entity
+@Table(name="flight")
 public class FlightEntity {
 
 	@Id
@@ -15,7 +20,10 @@ public class FlightEntity {
 	
 	private String destination;
 	
-	private Long offset;
+	private Long delay;
+	
+	@ManyToMany(mappedBy = "flights")
+	private Set<Itinerary> bookings;
 	
 	public FlightEntity() {
 		
@@ -45,12 +53,20 @@ public class FlightEntity {
 		this.destination = destination;
 	}
 
-	public Long getOffset() {
-		return offset;
+	public Long getDelay() {
+		return delay;
 	}
 
-	public void setOffset(Long offset) {
-		this.offset = offset;
+	public void setDelay(Long delay) {
+		this.delay = delay;
+	}
+
+	public Set<Itinerary> getBookings() {
+		return bookings;
+	}
+
+	public void setBookings(Set<Itinerary> bookings) {
+		this.bookings = bookings;
 	}
 
 	@Override

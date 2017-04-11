@@ -1,11 +1,13 @@
 package com.cooksys.entity;
 
+import java.sql.Timestamp;
 import java.util.Set;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
-import javax.persistence.OneToMany;
+import javax.persistence.ManyToMany;
 import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
 
@@ -26,8 +28,11 @@ public class User {
 	@NotNull
 	private Profile profile;
 	
-	@OneToMany
+	@ManyToMany
 	private Set<Itinerary> itineraries;
+	
+	@Column(nullable = false, updatable = false, insertable = false, columnDefinition = "TIMESTAMP DEFAULT CURRENT_TIMESTAMP")
+	private Timestamp joined;
 	
 	private Boolean deleted;
 	
@@ -65,6 +70,14 @@ public class User {
 
 	public void setItineraries(Set<Itinerary> itineraries) {
 		this.itineraries = itineraries;
+	}
+	
+	public Timestamp getJoined() {
+		return joined;
+	}
+	
+	public void setJoined(Timestamp joined) {
+		this.joined = joined;
 	}
 
 	public Boolean getDeleted() {
