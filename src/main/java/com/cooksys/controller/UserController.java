@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.cooksys.dto.UserDto;
 import com.cooksys.dto.UserRequestDto;
+import com.cooksys.embeddable.Credentials;
 import com.cooksys.service.UserService;
 
 @RestController
@@ -26,6 +27,11 @@ public class UserController {
 	@RequestMapping(value = "/{username}", method = RequestMethod.GET)
 	public UserDto getUser(@PathVariable String username) {
 		return userService.getUser(username);
+	}
+	
+	@RequestMapping(value = "/{username}", method = RequestMethod.DELETE)
+	public UserDto deleteUser(@RequestBody Credentials credentials, @PathVariable String username) {
+		return userService.deleteUser(credentials, username);
 	}
 	
 	@RequestMapping(value = "/{username}", method = RequestMethod.PATCH)
