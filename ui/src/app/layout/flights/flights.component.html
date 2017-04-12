@@ -1,0 +1,7 @@
+<link rel="stylesheet" href="src/styles.css">
+
+<h1>Button</h1>
+<md-button class="button1" ng-click="flightsCtrl.getFlights()">Get Flights</md-button>
+<div class="flights" ng-repeat="flight in flightsCtrl.flights">
+  {{flight}}
+</div>
