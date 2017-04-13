@@ -2,7 +2,7 @@ import templateUrl from './app.component.html'
 
 /* @ngInject */
 class AppController {
-  constructor ($log) {
+  constructor ($log, userService) {
     $log.debug('AppController is a go.')
   }
 }

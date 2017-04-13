@@ -72,6 +72,11 @@
   background-color: #ACD0C0
 }
 
+.register {
+  display: flex;
+  background-color: #4F6547;
+}
+
 .content,
 .footer {
   display: flex;
