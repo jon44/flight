@@ -86,4 +86,12 @@ public class UserService {
 		return null;
 	}
 
+	public Boolean getCredentialsValid(Credentials credentials) {
+		if(userRepository.findByCredentialsUsername(credentials.getUsername()) != null) {
+			return true;
+		}
+		
+		return false;
+	}
+
 }

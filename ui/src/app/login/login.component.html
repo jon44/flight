@@ -1,0 +1,13 @@
+<link rel="stylesheet" href="src/styles.css">
+
+<div class="input row" ng-show="!loginCtrl.loggedIn">
+  <span class="message" ng-show="loginCtrl.showMessage">Account Not Registered</span>
+  <md-input-container md-no-float class="md-block">
+    <input ng-model="username" placeholder="username">
+  </md-input-container>
+  <md-input-container md-no-float class="md-block">
+    <input ng-model="password" placeholder="password">
+  </md-input-container>
+  <md-button class="color-button" ng-click="loginCtrl.login(username, password)">Login</md-button>
+  <md-button class="color-button">Register</md-button>
+</div>

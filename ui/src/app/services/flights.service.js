@@ -1,12 +1,13 @@
 /* @ngInject */
 class FlightsService {
-  constructor ($http) {
+  constructor ($http, apiUrl) {
     this.$http = $http
+    this.apiUrl = apiUrl
   }
 
   getFlights () {
     return this.$http
-      .get(`http://localhost:8000/flights`)
+      .get(`${this.apiUrl}/flights`)
       .then(result => result.data)
   }
 }

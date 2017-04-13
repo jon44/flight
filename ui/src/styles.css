@@ -1,3 +1,86 @@
-.button1 {
-  background-color: lightgreen;
+* {
+  box-sizing: border-box;
+}
+
+.fullscreen {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.row,
+.column,
+.credentials,
+.message {
+  display: flex;
+}
+
+.row {
+  flex-direction: row;
+}
+
+.column {
+  flex-direction: column;
+}
+
+.login {
+  flex: 1;
+  background-color: #75B1A9;
+}
+
+.flights-list {
+  flex: 9;
+  background-color: #4F6547;
+}
+
+.credentials {
+  flex: 3;
+}
+
+.message,
+.input {
+  flex: 1;
+}
+
+.input {
+  justify-content: flex-end;
+}
+
+.message {
+  justify-content: flex-end;
+  align-items: center;
+  padding-right: 10px;
+}
+
+.color-button {
+  background-color: #D9B44A;
+  height: 60%;
+}
+
+.flights-list {
+  display: flex;
+  flex-direction: column;
+  padding-left: 25%;
+  padding-right: 25%;
+  padding-top: 5%;
+  padding-bottom: 5%;
+  background-color: #4F6547;
+}
+
+.flight-card {
+  background-color: #ACD0C0
+}
+
+.content,
+.footer {
+  display: flex;
+}
+
+.offset {
+  justify-content: flex-start;
+}
+
+.duration {
+  justify-content: flex-end;
 }

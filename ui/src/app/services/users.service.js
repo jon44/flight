@@ -1,27 +1,37 @@
-angular.module('flight')
-
-.service('userService', function ($http) {
-  this.currentUser = {
+/* @ngInject */
+class UserService {
+  currentUser = {
     username: '',
     password: ''
   }
 
-  this.getCurrentUser = () => { return this.currentUser }
-
-  this.setCurrentUser = (currentUser) => { this.currentUser = currentUser }
-
-  this.postUser = (user) => {
-    return $http.post(`http://localhost:8000/users/`, JSON.stringify(user))
-        .then(function success (response) {
-          this.currentUser = user['credentials']
-          return response.data
-        })
+  constructor ($http, apiUrl) {
+    this.$http = $http
+    this.apiUrl = apiUrl
   }
 
-  this.getUser = (username) => {
-    return $http.get(`http://localhost:8000/users/${username}`)
-      .then(function success (response) {
-        return response.data
+  getCurrentUser () {
+    return this.currentUser
+  }
+
+  setCurrentUser (currentUser) {
+    this.currentUser = currentUser
+  }
+
+  postUser (user) {
+    return this.$http
+      .post(`${this.apiUrl}/users`, JSON.stringify(user))
+      .then(result => {
+        this.currentUser = user['credentials']
+        return result.data
       })
   }
-})
+
+  getUser (username) {
+    return this.$http
+      .get(`${this.apiUrl}/users/${username}`)
+      .then(result => result.data)
+  }
+}
+
+export default UserService
