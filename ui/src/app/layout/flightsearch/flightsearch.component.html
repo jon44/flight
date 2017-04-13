@@ -1,11 +1,26 @@
 <link rel="stylesheet" href="src/styles.css">
 
 <div class="itinerary column">
-  left
+  <md-card ng-repeat="itinerary in flightsearchCtrl.itineraries.flightEntityDtos">
+    <md-card-content>
+      <h2>{{itinerary.origin}} - to - {{itinerary.destination}}</h2>
+    </md-card-content>
+    <md-card-footer>
+      Takeoff - {{itinerary.delay}}
+    </md-card-footer>
+  </md-card>
 </div>
 <div class="search column">
   <div class="search-input row">
-    i really give up
+    <md-input-container>
+      Origin<input required md-no-asterisk type="text" ng-model="origin">
+    </md-input-container>
+    <md-input-container>
+      Destination<input required md-no-asterisk type="text" ng-model="destination">
+    </md-input-container>
+    <md-button class="color-button search-button" ng-click="flightsearchCtrl.findItinerary(origin, destination)">
+        Search
+    </md-button>
   </div>
   <div class="flight-itineraries row">
     <div class="flight-list" ng-show="flightsearchCtrl.showFlights">
@@ -24,7 +39,19 @@
       </md-content>
     </div>
     <div class="itinerary-list" ng-show="!flightsearchCtrl.showFlights">
-
+      <div class="text-center" ng-show="!flightsearchCtrl.itineraryFound">
+        <h2>No Itinerary Found</h2>
+      </div>
+      <div class="itinerary-card" ng-show="flightsearchCtrl.itineraryFound">
+        <md-card ng-repeat="flight in flightsearchCtrl.itinerary.flights" ng-click="flightsearchCtrl.bookItinerary()">
+          <md-card-content>
+            <h2>{{flight.origin}} - to - {{flight.destination}}</h2>
+          </md-card-content>
+          <md-card-footer>
+            Takeoff - {{flight.delay}}
+          </md-card-footer>
+        </md-card>
+      </div>
     </div>
   </div>
 </div>

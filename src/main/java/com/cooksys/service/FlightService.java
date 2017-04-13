@@ -1,7 +1,5 @@
 package com.cooksys.service;
 
-import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.forwardedUrl;
-
 import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;

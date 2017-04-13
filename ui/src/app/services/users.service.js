@@ -32,6 +32,18 @@ class UserService {
       .get(`${this.apiUrl}/users/${username}`)
       .then(result => result.data)
   }
+
+  bookItinerary (bookingRequest, username) {
+    return this.$http
+      .post(`${this.apiUrl}/users/${username}/book`, JSON.stringify(bookingRequest))
+      .then(result => result.data)
+  }
+
+  getItineraries (username) {
+    return this.$http
+      .get(`${this.apiUrl}/users/${username}/bookings`)
+      .then(result => result.data)
+  }
 }
 
 export default UserService

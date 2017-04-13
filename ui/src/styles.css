@@ -126,6 +126,8 @@
 .search-input {
   flex: 1;
   display: flex;
+  justify-content: center;
+  align-items: center;
   background-color: #ACD0C0;
 }
 
@@ -137,4 +139,19 @@
 
 .flight-list {
   flex: 1;
+  flex-direction: column;
+  padding-bottom: 5%;
+  padding-top: 5%;
+  padding-left: 10%;
+  padding-right: 10%;
+}
+
+.search-button {
+  height: 25%;
+}
+
+.text-center {
+  display: flex;
+  justify-content: center;
+  text-align: center;
 }
