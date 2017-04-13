@@ -1,29 +1,29 @@
 <link rel="stylesheet" href="src/styles.css">
 
 <md-content class="register-content">
-    <form>
+    <form class="form column">
       <md-input-container>
         Username<input required md-no-asterisk type="text" ng-model="username">
-        <span ng-show="ctrl.usernameRequired"> - required</span>
-        <span ng-show="ctrl.usernameTaken"> - username taken</span>
+        <span ng-show="registerCtrl.usernameRequired"> - required</span>
+        <span ng-show="registerCtrl.usernameTaken"> - username taken</span>
       </md-input-container>
       <md-input-container>
-        Password<input required md-no-asterisk type="text" ng-model="password"><span ng-show="ctrl.passwordRequired"> - required</span>
+        Password<input required md-no-asterisk type="text" ng-model="password"><span ng-show="registerCtrl.passwordRequired"> - required</span>
       </md-input-container>
       <md-input-container>
         First Name<input type="text" ng-model="firstName">
       </md-input-container>
       <md-input-container>
-        Last Name<input type="text" ng-modle="lastName">
+        Last Name<input type="text" ng-model="lastName">
       </md-input-container>
       <md-input-container>
-        Email<input required md-no-asterisk type="text" ng-model="email"><span ng-show="ctrl.emailRequired"> - required</span>
+        Email<input required md-no-asterisk type="text" ng-model="email"><span ng-show="registerCtrl.emailRequired"> - required</span>
       </md-input-container>
       <md-input-container>
         Phone<input type="text" ng-model="phone">
       </md-input-container>
-      <div>
-        <md-button ng-click="ctrl.registerClick(username, password, firstName, lastName, email, phone)">
+      <div class="center">
+        <md-button class="color-button" ng-click="registerCtrl.register(username, password, firstName, lastName, email, phone)">
             Register
         </md-button>
       </div>
