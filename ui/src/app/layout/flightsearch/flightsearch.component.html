@@ -1,0 +1,30 @@
+<link rel="stylesheet" href="src/styles.css">
+
+<div class="itinerary column">
+  left
+</div>
+<div class="search column">
+  <div class="search-input row">
+    i really give up
+  </div>
+  <div class="flight-itineraries row">
+    <div class="flight-list" ng-show="flightsearchCtrl.showFlights">
+      <md-content>
+        <md-card ng-repeat="flight in flightsearchCtrl.flights">
+          <md-card-content class="content">
+            <p>{{flight.origin}}</p>
+            <p>==></p>
+            <p>{{flight.destination}}</p>
+          </md-card-content>
+          <md-card-footer class="footer">
+            <span class="offset">Take Off: {{flight.offset}}</span>
+            <span class="duration">-Flight Time: {{flight.flightTime}}</span>
+          </md-card-footer>
+        </md-card>
+      </md-content>
+    </div>
+    <div class="itinerary-list" ng-show="!flightsearchCtrl.showFlights">
+
+    </div>
+  </div>
+</div>

@@ -98,10 +98,43 @@
   justify-content: center;
   padding-left: 35%;
   padding-right: 35%;
-  background-color: #ACD0C0
+  background-color: #ACD0C0;
 }
 
 .center {
   display: flex;
   justify-content: center;
+}
+
+.flightsearch {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  height: 100%;
+}
+
+.itinerary {
+  flex: 1;
+  background-color: #4F6547;
+}
+
+.search {
+  flex: 3;
+  background-color: #75B1A9;
+}
+
+.search-input {
+  flex: 1;
+  display: flex;
+  background-color: #ACD0C0;
+}
+
+.flight-itineraries {
+  flex: 3;
+  display: flex;
+  background-color: #75B1A9;
+}
+
+.flight-list {
+  flex: 1;
 }

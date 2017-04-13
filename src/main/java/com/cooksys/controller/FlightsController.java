@@ -1,7 +1,6 @@
 package com.cooksys.controller;
 
 import java.util.ArrayList;
-import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
@@ -34,8 +33,8 @@ public class FlightsController {
 	}
 	
 	@RequestMapping(value = "/paths", method = RequestMethod.POST)
-	public List<Itinerary> findPaths(@RequestBody PathEndpoints endpoints) {
-		return flightService.getPaths(endpoints);
+	public Itinerary findPaths(@RequestBody PathEndpoints endpoints) {
+		return flightService.getPath(endpoints);
 	}
 	
 }

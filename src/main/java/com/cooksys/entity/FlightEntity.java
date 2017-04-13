@@ -8,6 +8,8 @@ import javax.persistence.Id;
 import javax.persistence.ManyToMany;
 import javax.persistence.Table;
 
+import com.cooksys.pojo.Flight;
+
 @Entity
 @Table(name="flight")
 public class FlightEntity {
@@ -27,6 +29,12 @@ public class FlightEntity {
 	
 	public FlightEntity() {
 		
+	}
+	
+	public FlightEntity(Flight flight) {
+		this.origin = flight.getOrigin();
+		this.destination = flight.getDestination();
+		this.delay = flight.getOffset();
 	}
 
 	public Long getId() {
